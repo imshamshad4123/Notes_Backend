@@ -32,10 +32,10 @@ const database=module.exports=()=>{
     //     console.log(error);
     //     console.log('databse connection failed')
     // }
-    const dbName = 'test'; // Replace 'inotebook' with your actual database name
+    //const dbName = 'test'; // Replace 'inotebook' with your actual database name
 
     try {
-        mongoose.connect(`mongodb+srv://imshamshad598:shamshad123@cluster0.pzovjal.mongodb.net/${dbName}`, connectionParams)
+        mongoose.connect(`mongodb+srv://imshamshad598:shamshad123@cluster0.pzovjal.mongodb.net/`, connectionParams)
             .then(() => {
                 console.log('Database connected');
             })
