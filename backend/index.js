@@ -10,7 +10,7 @@ const cors=require('cors')
 app.use(cors())
 
 const corsOptions = {
-  origin: 'https://thunderclient.io',
+  origin: ['https://thunderclient.io', 'https://notesappbackend3-fn9c.onrender.com'],
 };
 app.use(cors(corsOptions));
 
