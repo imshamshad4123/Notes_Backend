@@ -21,16 +21,30 @@ const database=module.exports=()=>{
         useNewUrlParser:true,
         useUnifiedTopology:true,
     }
-    try{
-        // mongoose.connect('mongodb+srv://imshamshad:Going41ever@cluster0.hlza1dv.mongodb.net/inotebook?retryWrites=true&w=majority',
-        // connectionParams)
-        mongoose.connect('mongodb+srv://imshamshad598:shamshad123@cluster0.pzovjal.mongodb.net/',
-        connectionParams)
-        console.log('databse connected')
-    }
-    catch(error){
-        console.log(error);
-        console.log('databse connection failed')
+    // try{
+    //     // mongoose.connect('mongodb+srv://imshamshad:Going41ever@cluster0.hlza1dv.mongodb.net/inotebook?retryWrites=true&w=majority',
+    //     // connectionParams)
+    //     mongoose.connect('mongodb+srv://imshamshad598:shamshad123@cluster0.pzovjal.mongodb.net/',
+    //     connectionParams)
+    //     console.log('databse connected')
+    // }
+    // catch(error){
+    //     console.log(error);
+    //     console.log('databse connection failed')
+    // }
+    const dbName = 'test'; // Replace 'inotebook' with your actual database name
+
+    try {
+        mongoose.connect(`mongodb+srv://imshamshad598:shamshad123@cluster0.pzovjal.mongodb.net/${dbName}`, connectionParams)
+            .then(() => {
+                console.log('Database connected');
+            })
+            .catch(error => {
+                console.error('Error connecting to database:', error);
+            });
+    } catch (error) {
+        console.error(error);
+        console.log('Database connection failed');
     }
 }
 database();
