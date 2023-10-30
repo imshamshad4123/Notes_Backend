@@ -8,6 +8,12 @@ const app = express();
 const mongoose=require('mongoose')
 const cors=require('cors')
 app.use(cors())
+
+const corsOptions = {
+  origin: 'https://thunderclient.io',
+};
+app.use(cors(corsOptions));
+
 app.use(express.json())
 //
 const database=module.exports=()=>{
